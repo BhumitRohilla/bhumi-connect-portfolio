@@ -112,20 +112,16 @@ const Index = () => {
       {/* Quick Stats */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-3 gap-8 text-center max-w-2xl mx-auto">
             <div className="animate-fade-in-up opacity-0 stagger-1">
               <div className="text-4xl font-bold text-primary mb-2">10K+</div>
               <div className="text-muted-foreground">Users Served</div>
             </div>
             <div className="animate-fade-in-up opacity-0 stagger-2">
-              <div className="text-4xl font-bold text-primary mb-2">6+</div>
-              <div className="text-muted-foreground">Projects Built</div>
-            </div>
-            <div className="animate-fade-in-up opacity-0 stagger-3">
               <div className="text-4xl font-bold text-primary mb-2">2+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </div>
-            <div className="animate-fade-in-up opacity-0 stagger-4">
+            <div className="animate-fade-in-up opacity-0 stagger-3">
               <div className="text-4xl font-bold text-primary mb-2">70%</div>
               <div className="text-muted-foreground">Issue Reduction</div>
             </div>

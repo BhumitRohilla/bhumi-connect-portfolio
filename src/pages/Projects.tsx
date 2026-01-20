@@ -29,10 +29,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       </div>
 
       {/* Highlights */}
-      <ul className="space-y-1 mb-4">
+      <ul className="space-y-2 mb-4 list-disc list-inside marker:text-primary">
         {project.highlights.map((highlight) => (
-          <li key={highlight} className="text-sm text-muted-foreground flex items-start gap-2">
-            <span className="text-primary mt-1.5">•</span>
+          <li key={highlight} className="text-sm text-muted-foreground">
             {highlight}
           </li>
         ))}

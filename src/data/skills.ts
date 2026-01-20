@@ -22,7 +22,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "Frontend",
-    skills: ["React", "Next.js", "Zustand", "Ant Design", "Tailwind CSS", "Shadcn UI"],
+    skills: ["React", "React Native", "Next.js", "Zustand", "Ant Design", "Tailwind CSS", "Shadcn UI"],
   },
   {
     name: "DevOps & Tools",

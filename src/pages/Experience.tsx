@@ -62,10 +62,9 @@ const Experience = () => {
                       <CardContent>
                         <p className="text-muted-foreground mb-4">{exp.description}</p>
                         {exp.achievements.length > 0 && (
-                          <ul className="space-y-2">
+                          <ul className="space-y-2 list-disc list-inside marker:text-primary">
                             {exp.achievements.map((achievement) => (
-                              <li key={achievement} className="text-sm text-muted-foreground flex items-start gap-2">
-                                <span className="text-primary mt-1">•</span>
+                              <li key={achievement} className="text-sm text-muted-foreground">
                                 {achievement}
                               </li>
                             ))}

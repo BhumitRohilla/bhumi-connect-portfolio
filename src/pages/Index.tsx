@@ -3,6 +3,13 @@ import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { skillCategories } from "@/data/skills";
+import { trackResumeDownload } from "@/lib/posthog";
+
+const handleResumeDownload = () => {
+  trackResumeDownload("hero_section");
+  // TODO: Add actual resume download link
+  window.open("/resume.pdf", "_blank");
+};
 
 const techStackIcons = [
   "JavaScript", "TypeScript", "React", "Node.js", "Go", "MongoDB", "PostgreSQL", "Docker"
@@ -41,7 +48,12 @@ const Index = () => {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="gap-2">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="gap-2"
+              onClick={handleResumeDownload}
+            >
               <Download className="h-4 w-4" />
               Download CV
             </Button>

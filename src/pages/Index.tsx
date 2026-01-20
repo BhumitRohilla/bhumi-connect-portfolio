@@ -12,7 +12,7 @@ const handleResumeDownload = () => {
 };
 
 const techStackIcons = [
-  "JavaScript", "TypeScript", "React", "Node.js", "Go", "MongoDB", "PostgreSQL", "Docker"
+  "JavaScript", "TypeScript", "React", "React Native", "Node.js", "Go", "MongoDB", "PostgreSQL", "Docker"
 ];
 
 const Index = () => {

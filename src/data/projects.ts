@@ -59,6 +59,19 @@ export const workProjects: Project[] = [
     ],
     type: "work",
   },
+  {
+    id: "complaint-logging",
+    title: "Complaint Logging System",
+    description: "Mobile app for citizens to log complaints with location-based tracking using Google Maps, automatic ward detection, and authority notification system.",
+    techStack: ["React Native", "Expo", "Google Maps API", "Node.js"],
+    highlights: [
+      "GPS-based complaint logging",
+      "Automatic ward detection",
+      "Real-time authority notifications",
+      "Location-based categorization",
+    ],
+    type: "work",
+  },
 ];
 
 export const personalProjects: Project[] = [

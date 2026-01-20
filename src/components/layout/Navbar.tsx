@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackResumeDownload } from "@/lib/posthog";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -10,6 +11,12 @@ const navLinks = [
   { name: "Skills", path: "/skills" },
   { name: "Contact", path: "/contact" },
 ];
+
+const handleResumeDownload = (source: string) => {
+  trackResumeDownload(source);
+  // TODO: Add actual resume download link
+  window.open("/resume.pdf", "_blank");
+};
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +51,11 @@ export const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button size="sm" className="gap-2">
+            <Button 
+              size="sm" 
+              className="gap-2"
+              onClick={() => handleResumeDownload("navbar_desktop")}
+            >
               <Download className="h-4 w-4" />
               Resume
             </Button>
@@ -78,7 +89,11 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button size="sm" className="gap-2 w-fit">
+              <Button 
+                size="sm" 
+                className="gap-2 w-fit"
+                onClick={() => handleResumeDownload("navbar_mobile")}
+              >
                 <Download className="h-4 w-4" />
                 Resume
               </Button>

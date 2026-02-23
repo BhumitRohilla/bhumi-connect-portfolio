@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { trackSocialClick } from "@/lib/posthog";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -47,6 +48,7 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="GitHub"
+                onClick={() => trackSocialClick("github", "footer")}
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -56,6 +58,7 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="LinkedIn"
+                onClick={() => trackSocialClick("linkedin", "footer")}
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -63,6 +66,7 @@ export const Footer = () => {
                 href="mailto:bhumit73rohilla@gmail.com"
                 className="p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Email"
+                onClick={() => trackSocialClick("email", "footer")}
               >
                 <Mail className="h-5 w-5" />
               </a>

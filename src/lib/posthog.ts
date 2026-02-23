@@ -25,4 +25,19 @@ export const trackResumeDownload = (source: string) => {
   });
 };
 
+export const trackSocialClick = (platform: string, source: string) => {
+  trackEvent("social_link_clicked", {
+    platform,
+    source,
+    timestamp: new Date().toISOString(),
+  });
+};
+
+export const trackPageSection = (section: string) => {
+  trackEvent("section_viewed", {
+    section,
+    timestamp: new Date().toISOString(),
+  });
+};
+
 export { posthog };

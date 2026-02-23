@@ -3,7 +3,7 @@ import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { skillCategories } from "@/data/skills";
-import { trackResumeDownload } from "@/lib/posthog";
+import { trackResumeDownload, trackSocialClick } from "@/lib/posthog";
 
 const handleResumeDownload = () => {
   trackResumeDownload("hero_section");
@@ -67,6 +67,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110"
               aria-label="GitHub"
+              onClick={() => trackSocialClick("github", "hero")}
             >
               <Github className="h-5 w-5" />
             </a>
@@ -76,13 +77,15 @@ const Index = () => {
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110"
               aria-label="LinkedIn"
+              onClick={() => trackSocialClick("linkedin", "hero")}
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:bhumit@example.com"
+              href="mailto:bhumit73rohilla@gmail.com"
               className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110"
               aria-label="Email"
+              onClick={() => trackSocialClick("email", "hero")}
             >
               <Mail className="h-5 w-5" />
             </a>

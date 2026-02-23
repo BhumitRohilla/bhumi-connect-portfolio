@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { ExternalLink, Github, Briefcase, User } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { workProjects, personalProjects, Project } from "@/data/projects";
+import { trackPageSection, trackSocialClick } from "@/lib/posthog";
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
   <Card 
@@ -41,7 +43,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       <div className="flex gap-2">
         {project.github && (
           <Button variant="outline" size="sm" asChild>
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackSocialClick("github", `project_${project.id}`)}
+            >
               <Github className="h-4 w-4 mr-2" />
               Code
             </a>
@@ -49,7 +56,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         )}
         {project.link && (
           <Button size="sm" asChild>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackSocialClick("live_demo", `project_${project.id}`)}
+            >
               <ExternalLink className="h-4 w-4 mr-2" />
               Live Demo
             </a>
@@ -61,6 +73,10 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 );
 
 const Projects = () => {
+  useEffect(() => {
+    trackPageSection("projects");
+  }, []);
+
   return (
     <Layout>
       <div className="container mx-auto px-4 py-16 md:py-24">

@@ -126,7 +126,7 @@ const Index = () => {
       </section>
 
       {/* About Me */}
-      <section className="py-20 border-t border-border">
+      <section className="py-28 border-t border-border">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -136,7 +136,7 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Preview */}
-      <section className="py-16 border-t border-border bg-card">
+      <section className="py-28 border-t border-border bg-card">
         <div className="container mx-auto px-4">
           <h2 className="text-center text-sm font-medium text-muted-foreground uppercase tracking-wider mb-8">
             Tech Stack
@@ -155,7 +155,7 @@ const Index = () => {
       </section>
 
       {/* Quick Stats */}
-      <section className="py-20 border-t border-border">
+      <section className="py-28 border-t border-border">
         <div className="container mx-auto px-4">
           <h2 className="text-center text-sm font-medium text-muted-foreground uppercase tracking-wider mb-12">
             Impact

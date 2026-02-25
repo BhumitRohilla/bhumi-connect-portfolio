@@ -18,20 +18,20 @@ const Skills = () => {
   return (
     <Layout>
       {/* Hero header */}
-      <section className="min-h-[60vh] flex items-center justify-center px-4">
+      <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl text-center">
           <p className="text-primary font-medium uppercase tracking-wider text-sm mb-4">Expertise</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Skills
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Technologies and tools I work with to build scalable applications.
           </p>
         </div>
       </section>
 
       {/* Skills Grid */}
-      <section className="min-h-screen flex items-center py-24 px-4 bg-secondary/30">
+      <section className="py-16 px-4 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skillCategories.map((category, index) => {
@@ -71,7 +71,7 @@ const Skills = () => {
       </section>
 
       {/* Currently Learning */}
-      <section className="min-h-[50vh] flex items-center py-24 px-4">
+      <section className="py-16 px-4">
         <div className="container mx-auto max-w-3xl text-center">
           <p className="text-primary font-medium uppercase tracking-wider text-sm mb-4">Always Growing</p>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Currently Exploring</h2>

@@ -126,7 +126,7 @@ const Index = () => {
       </section>
 
       {/* About Me */}
-      <section className="py-20 bg-muted/20">
+      <section className="py-20 border-t border-border">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -136,16 +136,16 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Preview */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 border-t border-border bg-card">
         <div className="container mx-auto px-4">
           <h2 className="text-center text-sm font-medium text-muted-foreground uppercase tracking-wider mb-8">
             Tech Stack
           </h2>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {techStackIcons.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 rounded-full bg-background border border-border text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors"
+                className="px-4 py-2 rounded-full bg-secondary border border-border text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors"
               >
                 {tech}
               </span>
@@ -155,24 +155,27 @@ const Index = () => {
       </section>
 
       {/* Quick Stats */}
-      <section className="py-20">
+      <section className="py-20 border-t border-border">
         <div className="container mx-auto px-4">
+          <h2 className="text-center text-sm font-medium text-muted-foreground uppercase tracking-wider mb-12">
+            Impact
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-3xl mx-auto">
-            <div className="animate-fade-in-up opacity-0 stagger-1">
+            <div className="p-6 rounded-xl bg-card border border-border">
               <div className="text-4xl font-bold text-primary mb-2">40+</div>
-              <div className="text-muted-foreground">Production Servers</div>
+              <div className="text-sm text-muted-foreground">Production Servers</div>
             </div>
-            <div className="animate-fade-in-up opacity-0 stagger-2">
+            <div className="p-6 rounded-xl bg-card border border-border">
               <div className="text-4xl font-bold text-primary mb-2">4,000+</div>
-              <div className="text-muted-foreground">Concurrent Users</div>
+              <div className="text-sm text-muted-foreground">Concurrent Users</div>
             </div>
-            <div className="animate-fade-in-up opacity-0 stagger-3">
+            <div className="p-6 rounded-xl bg-card border border-border">
               <div className="text-4xl font-bold text-primary mb-2">10K+</div>
-              <div className="text-muted-foreground">Platform Users</div>
+              <div className="text-sm text-muted-foreground">Platform Users</div>
             </div>
-            <div className="animate-fade-in-up opacity-0 stagger-4">
+            <div className="p-6 rounded-xl bg-card border border-border">
               <div className="text-4xl font-bold text-primary mb-2">70%</div>
-              <div className="text-muted-foreground">Violation Reduction</div>
+              <div className="text-sm text-muted-foreground">Violation Reduction</div>
             </div>
           </div>
         </div>

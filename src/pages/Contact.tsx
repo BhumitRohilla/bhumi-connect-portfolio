@@ -81,20 +81,20 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero header */}
-      <section className="min-h-[60vh] flex items-center justify-center px-4">
+      <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl text-center">
           <p className="text-primary font-medium uppercase tracking-wider text-sm mb-4">Contact</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
         </div>
       </section>
 
       {/* Contact Form + Info */}
-      <section className="min-h-screen flex items-center py-24 px-4 bg-secondary/30">
+      <section className="py-16 px-4 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}

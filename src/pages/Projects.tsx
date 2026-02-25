@@ -77,20 +77,20 @@ const Projects = () => {
   return (
     <Layout>
       {/* Hero header */}
-      <section className="min-h-[60vh] flex items-center justify-center px-4">
+      <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-6xl text-center">
           <p className="text-primary font-medium uppercase tracking-wider text-sm mb-4">Portfolio</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Projects
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A collection of work projects at CodeQuotient and personal projects I've built.
           </p>
         </div>
       </section>
 
       {/* Work Projects */}
-      <section className="min-h-screen flex items-center py-24 px-4 bg-secondary/30">
+      <section className="py-16 px-4 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
           <div className="flex items-center gap-3 mb-12">
             <div className="p-2 rounded-lg bg-primary/10">
@@ -109,7 +109,7 @@ const Projects = () => {
       </section>
 
       {/* Personal Projects */}
-      <section className="min-h-[70vh] flex items-center py-24 px-4">
+      <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="flex items-center gap-3 mb-12">
             <div className="p-2 rounded-lg bg-primary/10">

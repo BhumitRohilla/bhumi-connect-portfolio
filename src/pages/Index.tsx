@@ -126,7 +126,7 @@ const Index = () => {
       </section>
 
       {/* About Me */}
-      <section className="py-28 border-t border-border">
+      <section className="py-40 border-t border-border">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">

@@ -74,8 +74,9 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          © {currentYear} Bhumit Rohilla. All rights reserved.
+        <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground space-y-1">
+          <p>© {currentYear} Bhumit Rohilla. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground/60">Built with React & TypeScript</p>
         </div>
       </div>
     </footer>

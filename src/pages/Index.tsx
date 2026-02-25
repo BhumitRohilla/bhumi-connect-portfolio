@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,19 +8,52 @@ import { trackResumeDownload, trackSocialClick } from "@/lib/posthog";
 
 const handleResumeDownload = () => {
   trackResumeDownload("hero_section");
-  // TODO: Add actual resume download link
   window.open("/resume.pdf", "_blank");
 };
 
 const techStackIcons = [
-  "JavaScript", "TypeScript", "React", "React Native", "Node.js", "Go", "MongoDB", "PostgreSQL", "Docker"
+  "Node.js", "React", "TypeScript", "MongoDB", "Redis", "ElectronJS", "DigitalOcean", "Docker", "Go", "Python"
 ];
+
+const subtitleFull = "Software Development Engineer & Infrastructure Engineer";
+
+const TypingSubtitle = () => {
+  const [displayed, setDisplayed] = useState("");
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayed(subtitleFull.slice(0, i));
+      if (i >= subtitleFull.length) {
+        clearInterval(interval);
+        setDone(true);
+      }
+    }, 35);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up opacity-0 stagger-3">
+      {displayed}
+      <span className={`inline-block w-0.5 h-6 bg-primary ml-1 align-middle ${done ? "animate-pulse" : ""}`} />
+    </p>
+  );
+};
 
 const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4">
+      <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 relative overflow-hidden">
+        {/* Mesh gradient background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
+          <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-accent/30 blur-3xl" />
+        </div>
+
         <div className="container max-w-4xl mx-auto text-center">
           <div className="animate-fade-in-up opacity-0 stagger-1">
             <p className="text-primary font-medium mb-4">Hello, I'm</p>
@@ -29,15 +63,13 @@ const Index = () => {
             Bhumit Rohilla
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in-up opacity-0 stagger-3">
-            Software Development Engineer
-          </p>
+          <TypingSubtitle />
           
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in-up opacity-0 stagger-4">
-            Specializing in <span className="text-primary font-medium">Backend Development</span>, 
-            {" "}<span className="text-primary font-medium">React</span>, and 
-            {" "}<span className="text-primary font-medium">AI Integration</span>. 
-            Building scalable solutions that impact thousands of users.
+            I manage <span className="text-primary font-medium">40+ production servers</span>, 
+            build anti-cheating systems, and scale platforms to handle{" "}
+            <span className="text-primary font-medium">4,000+ concurrent users</span>. 
+            Specializing in Backend Development, Infrastructure, React, and AI Integration at CodeQuotient.
           </p>
 
           {/* CTA Buttons */}
@@ -93,6 +125,16 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Me */}
+      <section className="py-20 bg-muted/20">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">About Me</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            I'm a Software Development Engineer at CodeQuotient, an ed-tech company where I wear many hats — from building AI-powered interview systems to managing large-scale infrastructure for proctored exams serving thousands of students simultaneously. I'm passionate about system design, performance optimization, and building robust, scalable platforms.
+          </p>
+        </div>
+      </section>
+
       {/* Tech Stack Preview */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -115,18 +157,22 @@ const Index = () => {
       {/* Quick Stats */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8 text-center max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-3xl mx-auto">
             <div className="animate-fade-in-up opacity-0 stagger-1">
-              <div className="text-4xl font-bold text-primary mb-2">10K+</div>
-              <div className="text-muted-foreground">Users Served</div>
+              <div className="text-4xl font-bold text-primary mb-2">40+</div>
+              <div className="text-muted-foreground">Production Servers</div>
             </div>
             <div className="animate-fade-in-up opacity-0 stagger-2">
-              <div className="text-4xl font-bold text-primary mb-2">2+</div>
-              <div className="text-muted-foreground">Years Experience</div>
+              <div className="text-4xl font-bold text-primary mb-2">4,000+</div>
+              <div className="text-muted-foreground">Concurrent Users</div>
             </div>
             <div className="animate-fade-in-up opacity-0 stagger-3">
+              <div className="text-4xl font-bold text-primary mb-2">10K+</div>
+              <div className="text-muted-foreground">Platform Users</div>
+            </div>
+            <div className="animate-fade-in-up opacity-0 stagger-4">
               <div className="text-4xl font-bold text-primary mb-2">70%</div>
-              <div className="text-muted-foreground">Issue Reduction</div>
+              <div className="text-muted-foreground">Violation Reduction</div>
             </div>
           </div>
         </div>

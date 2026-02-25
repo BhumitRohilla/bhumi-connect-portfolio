@@ -14,7 +14,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "AI/ML",
-    skills: ["LangChain", "OpenAI API", "Vertex AI", "RAG Systems"],
+    skills: ["LangChain", "LangGraph", "OpenAI API", "Vertex AI", "RAG Systems"],
   },
   {
     name: "Databases",
@@ -25,7 +25,11 @@ export const skillCategories: SkillCategory[] = [
     skills: ["React", "React Native", "Next.js", "Zustand", "Ant Design", "Tailwind CSS", "Shadcn UI"],
   },
   {
+    name: "Infrastructure",
+    skills: ["DigitalOcean", "Nginx", "Load Balancers", "SSL/TLS", "Auto-scaling", "Grafana", "Loki", "PM2", "S3"],
+  },
+  {
     name: "DevOps & Tools",
-    skills: ["Docker", "AWS S3", "DigitalOcean", "Nginx", "Git", "Linux"],
+    skills: ["Docker", "CI/CD", "Git", "Linux", "Shell Scripting", "Cloudflare", "Firebase"],
   },
 ];

@@ -2,7 +2,6 @@ import { Code, Server, Brain, Database, Layout as LayoutIcon, Cloud, HardDrive, 
 import { Layout } from "@/components/layout/Layout";
 import { Badge } from "@/components/ui/badge";
 import { skillCategories } from "@/data/skills";
-import skillsHero from "@/assets/skills-hero.jpg";
 
 const iconMap: Record<string, React.ElementType> = {
   "Languages": Code,
@@ -37,22 +36,11 @@ const iconColorMap: Record<string, string> = {
 const Skills = () => {
   return (
     <Layout>
-      {/* Hero with background image */}
-      <section className="relative py-24 md:py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={skillsHero} 
-            alt="Tech background" 
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-        </div>
-        <div className="container mx-auto max-w-6xl text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-primary font-medium text-sm">Tech Stack</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+      {/* Hero header */}
+      <section className="py-16 md:py-24 px-4">
+        <div className="container mx-auto max-w-6xl text-center">
+          <p className="text-primary font-medium uppercase tracking-wider text-sm mb-4">Expertise</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Skills & Technologies
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

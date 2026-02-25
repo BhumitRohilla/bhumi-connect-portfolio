@@ -9,7 +9,7 @@ import { trackPageSection, trackSocialClick } from "@/lib/posthog";
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
   <Card 
-    className={`group hover:border-primary/50 transition-all duration-300 hover:shadow-lg animate-fade-in-up opacity-0`}
+    className={`group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 animate-fade-in-up opacity-0`}
     style={{ animationDelay: `${index * 0.1}s` }}
   >
     <CardHeader>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Download, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { trackResumeDownload, trackSocialClick } from "@/lib/posthog";
@@ -10,18 +10,6 @@ const handleResumeDownload = () => {
   window.open("/resume.pdf", "_blank");
 };
 
-const techStack = [
-  { name: "Node.js", url: "https://nodejs.org" },
-  { name: "React", url: "https://react.dev" },
-  { name: "TypeScript", url: "https://www.typescriptlang.org" },
-  { name: "MongoDB", url: "https://www.mongodb.com" },
-  { name: "Redis", url: "https://redis.io" },
-  { name: "ElectronJS", url: "https://www.electronjs.org" },
-  { name: "DigitalOcean", url: "https://www.digitalocean.com" },
-  { name: "Docker", url: "https://www.docker.com" },
-  { name: "Go", url: "https://go.dev" },
-  { name: "Python", url: "https://www.python.org" },
-];
 
 const subtitleFull = "Software Development Engineer & Infrastructure Engineer";
 
@@ -167,30 +155,6 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground font-medium">Violation Reduction</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Page 3: Tech Stack */}
-      <section className="min-h-screen flex items-center justify-center px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Tech Stack</h2>
-          <p className="text-muted-foreground mb-14 text-lg">Technologies I work with every day</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
-            {techStack.map((tech) => (
-              <a
-                key={tech.name}
-                href={tech.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-card border border-border hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                <span className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {tech.name}
-                </span>
-                <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-            ))}
           </div>
         </div>
       </section>

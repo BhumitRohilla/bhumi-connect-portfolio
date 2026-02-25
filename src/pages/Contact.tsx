@@ -223,7 +223,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Location</h3>
                     <p className="text-muted-foreground">
-                      MDU, Rohtak, India
+                      Panchkula, Haryana, India
                     </p>
                   </div>
                 </div>

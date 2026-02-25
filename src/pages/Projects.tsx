@@ -21,7 +21,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       </CardDescription>
     </CardHeader>
     <CardContent>
-      {/* Tech Stack */}
       <div className="flex flex-wrap gap-2 mb-4">
         {project.techStack.map((tech) => (
           <Badge key={tech} variant="secondary" className="font-normal">
@@ -30,7 +29,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         ))}
       </div>
 
-      {/* Highlights */}
       <ul className="space-y-2 mb-4 list-disc list-inside marker:text-primary">
         {project.highlights.map((highlight) => (
           <li key={highlight} className="text-sm text-muted-foreground">
@@ -39,7 +37,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         ))}
       </ul>
 
-      {/* Links */}
       <div className="flex gap-2">
         {project.github && (
           <Button variant="outline" size="sm" asChild>
@@ -79,50 +76,55 @@ const Projects = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-fade-in-up opacity-0 stagger-1">
+      {/* Hero header */}
+      <section className="min-h-[60vh] flex items-center justify-center px-4">
+        <div className="container mx-auto max-w-6xl text-center">
+          <p className="text-primary font-medium uppercase tracking-wider text-sm mb-4">Portfolio</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             Projects
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up opacity-0 stagger-2">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             A collection of work projects at CodeQuotient and personal projects I've built.
           </p>
         </div>
+      </section>
 
-        {/* Work Projects */}
-        <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
+      {/* Work Projects */}
+      <section className="min-h-screen flex items-center py-24 px-4 bg-secondary/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex items-center gap-3 mb-12">
             <div className="p-2 rounded-lg bg-primary/10">
               <Briefcase className="h-5 w-5 text-primary" />
             </div>
-            <h2 className="text-2xl font-bold text-foreground">Work Projects</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Work Projects</h2>
             <span className="text-sm text-muted-foreground">@ CodeQuotient</span>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {workProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Personal Projects */}
-        <section>
-          <div className="flex items-center gap-3 mb-8">
+      {/* Personal Projects */}
+      <section className="min-h-[70vh] flex items-center py-24 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex items-center gap-3 mb-12">
             <div className="p-2 rounded-lg bg-primary/10">
               <User className="h-5 w-5 text-primary" />
             </div>
-            <h2 className="text-2xl font-bold text-foreground">Personal Projects</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Personal Projects</h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {personalProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index + workProjects.length} />
             ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </Layout>
   );
 };

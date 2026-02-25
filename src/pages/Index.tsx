@@ -132,29 +132,40 @@ const Index = () => {
 
       {/* Page 2: About Me */}
       <section className="min-h-screen flex items-center justify-center px-4 bg-secondary/30">
-        <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-10">About Me</h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12">
-            I'm a Software Development Engineer at CodeQuotient, an ed-tech company where I wear many hats — from building AI-powered interview systems to managing large-scale infrastructure for proctored exams serving thousands of students simultaneously. I'm passionate about system design, performance optimization, and building robust, scalable platforms.
-          </p>
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Left: About text */}
+            <div>
+              <p className="text-primary font-medium uppercase tracking-wider text-sm mb-4">About Me</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
+                Building scalable systems that serve thousands
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                I'm a Software Development Engineer at CodeQuotient, an ed-tech company where I wear many hats — from building AI-powered interview systems to managing large-scale infrastructure for proctored exams serving thousands of students simultaneously.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I'm passionate about system design, performance optimization, and building robust, scalable platforms.
+              </p>
+            </div>
 
-          {/* Impact Stats inline */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="p-6 rounded-2xl bg-background border border-border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">40+</div>
-              <div className="text-sm text-muted-foreground">Production Servers</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-background border border-border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">4,000+</div>
-              <div className="text-sm text-muted-foreground">Concurrent Users</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-background border border-border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10K+</div>
-              <div className="text-sm text-muted-foreground">Platform Users</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-background border border-border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">70%</div>
-              <div className="text-sm text-muted-foreground">Violation Reduction</div>
+            {/* Right: Stats grid */}
+            <div className="grid grid-cols-2 gap-5">
+              <div className="p-8 rounded-2xl bg-background border border-border text-center">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-3">40+</div>
+                <div className="text-sm text-muted-foreground font-medium">Production Servers</div>
+              </div>
+              <div className="p-8 rounded-2xl bg-background border border-border text-center">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-3">4,000+</div>
+                <div className="text-sm text-muted-foreground font-medium">Concurrent Users</div>
+              </div>
+              <div className="p-8 rounded-2xl bg-background border border-border text-center">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-3">10K+</div>
+                <div className="text-sm text-muted-foreground font-medium">Platform Users</div>
+              </div>
+              <div className="p-8 rounded-2xl bg-background border border-border text-center">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-3">70%</div>
+                <div className="text-sm text-muted-foreground font-medium">Violation Reduction</div>
+              </div>
             </div>
           </div>
         </div>

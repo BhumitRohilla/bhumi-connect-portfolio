@@ -60,8 +60,7 @@ const Skills = () => {
               return (
                 <div
                   key={category.name}
-                  className={`group relative rounded-2xl border bg-gradient-to-br ${gradient} p-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:shadow-2xl animate-fade-in-up opacity-0`}
-                  style={{ animationDelay: `${index * 0.08}s` }}
+                  className={`group relative rounded-2xl border bg-gradient-to-br ${gradient} p-6 transition-shadow duration-200 hover:shadow-lg animate-fade-in`}
                 >
                   {/* Icon + Title */}
                   <div className="flex items-center gap-3 mb-5">
@@ -77,7 +76,7 @@ const Skills = () => {
                       <Badge
                         key={skill}
                         variant="secondary"
-                        className="bg-background/60 backdrop-blur-sm border border-border/50 text-foreground font-medium px-3 py-1 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                        className="bg-background/80 border border-border/50 text-foreground font-medium px-3 py-1 cursor-default"
                       >
                         {skill}
                       </Badge>
